@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Check List - Condições do Semi-Reboque</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-texto">
+    <h1>CHECK LIST - CONDIÇÕES DO SEMI-REBOQUE</h1>
+    <p>JCE Transportes · Frota / Manutenção</p>
+  </div>
+  <img src="assets/img/logo.png" alt="JCE" class="header-logo" id="logo-pdf" crossorigin="anonymous">
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <div class="campo" style="max-width:220px">
+      <span>Data</span>
+      <input type="date" id="data">
+    </div>
+  </div>
+
+  <div id="blocos-container"></div>
+
+  <button type="button" class="btn-add" onclick="adicionarBloco()">+ Adicionar outro Semi-Reboque</button>
+
+  <button type="button" class="btn-pdf" onclick="gerarPDF()">📄 Gerar PDF</button>
+
+</div>
+
+<!-- POPUP LADO -->
+<div id="popup-lado">
+  <div class="popup-caixa">
+    <div class="popup-titulo">Qual lado?</div>
+    <div class="popup-desc" id="popup-lado-desc">Item</div>
+    <div class="popup-botoes">
+      <button type="button" class="popup-btn azul-esc" onclick="resolverLado('E')">Esquerdo</button>
+      <button type="button" class="popup-btn azul"     onclick="resolverLado('D')">Direito</button>
+      <button type="button" class="popup-btn verde"    onclick="resolverLado('A')">Ambos</button>
+    </div>
+    <button type="button" class="popup-cancelar" onclick="cancelarLado()">Cancelar</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
